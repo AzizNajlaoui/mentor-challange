@@ -1,0 +1,134 @@
+:root{
+    --desktop:1440px;
+    --mobile:375px;
+    /*colors*/
+    /** primary*/
+    --violet:hsl(263, 55%, 52%);
+    --dark-grey-blue:hsl(217, 19%, 35%);
+    --dark-black-blue:hsl(219, 29%, 14%);
+    --white:hsl(0, 0%, 100%);
+    /** neutral*/
+    --light-gray:hsl(0, 0%, 81%);
+    --light-gray-blue:hsl(210, 46%, 95%);
+
+}
+html{font-size: 13px;}
+main{
+    display: grid;
+    max-width: 80%;
+    margin-inline: auto;
+    font-family: "Ovo", serif;
+    background-color: var(--white);
+    margin-block: 4rem;
+}
+.card{
+    box-shadow: 2px 0px 20px 8px hsl(0, 0%, 90%);
+    padding-block: 1rem;
+    padding-inline:4rem;
+    margin-block-end: 4rem;
+    border-radius:10px;
+    h2{
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+        font-family: sans-serif;
+    }
+    p{
+    font-size: 16px;
+    line-height: 1.6rem;
+    }
+}
+
+.card .card-header{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    
+    img{
+        border-radius: 50%;
+        border: var(--light-gray) 4px solid;
+    }
+    *{
+        margin: 0;
+    }
+    .card-header-text :first-child{
+        color: var(--white);
+        font-weight: bold;
+        font-size: 18px;
+        padding-block: 0.6rem;
+    }
+    .card-header-text :last-child{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    
+}
+.daniel{
+    background-color: var(--violet);
+    color: var(--white);
+    p{color:var(--light-gray)};
+    position: relative;
+    .all{
+        z-index: 1;
+    }  
+
+    .absolute{
+        position: absolute;
+        z-index: 1;
+        right: 20px;
+    }
+}
+
+.jonothan{
+    background-color: var(--dark-grey-blue);
+    color: var(--white);
+    p{color:var(--light-gray);}
+    
+}
+.jeanette , .kira{
+    background-color: var(--white);
+    color: var(--dark-grey-blue);
+}
+.patrick{
+    p{color:var(--light-gray);}
+    background-color: var(--dark-black-blue);
+    color: var(--white);
+}
+
+
+
+@media (min-width:1280px) {
+   
+    main{
+        
+        max-width: 1280px;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+        column-gap: 16px;
+        row-gap: 18px;
+        grid-template-areas: "daniel  daniel  jhon    kira"
+                             "janette patrick patrick kira";
+    }
+    .card{
+        margin-bottom: 0;
+    }
+    .daniel{
+        grid-area: daniel;
+    }
+    .jonothan{
+        grid-area:jhon;
+    }
+    .patrick{
+        grid-area: patrick;
+    }
+
+    .kira{
+        grid-area: kira;
+    }
+    .jeanette{
+        grid-area: janette;
+    }
+    .absolute{
+        right: 50px;
+        top: 20px;
+    }
+}
